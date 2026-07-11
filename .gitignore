@@ -1,0 +1,8 @@
+﻿# Archivos subidos por usuarios
+public/uploads/
+
+# Archivos temporales
+*.log
+
+# Configuración local
+.env
