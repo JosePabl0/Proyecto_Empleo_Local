@@ -30,7 +30,7 @@ require_once __DIR__."/../layouts/navbar.php";
      FORMULARIO CREAR OFERTA
 ========================== -->
 
-<form method="POST" action="/EmpleoLocal/public/empresa.php?action=crearOferta">
+<form method="POST" action="/EmpleoLocal/public/empresa/crearOferta">
 
 
 <!-- ==========================
@@ -212,7 +212,7 @@ Servicio al cliente
 
 <div class="d-flex justify-content-between">
 
-<a href="/EmpleoLocal/public/empresa.php?action=dashboard" 
+<a href="/EmpleoLocal/public/empresa/dashboard" 
 class="btn btn-secondary">
 
 ← Volver al panel

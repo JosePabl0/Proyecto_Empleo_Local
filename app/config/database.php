@@ -5,7 +5,8 @@ class Database{
     private $host = "localhost";
     private $db = "empleolocal";
     private $user = "root";
-    private $password = "9029";
+    private $password = "";
+    #9029
     private $connection = null;
 
     // CREAR CONEXION

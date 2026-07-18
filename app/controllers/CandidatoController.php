@@ -52,7 +52,7 @@ class CandidatoController extends Controller{
 
         if(!isset($_SESSION["usuario"])){
 
-            header("Location: /EmpleoLocal/public/login.php");
+            header("Location: " . BASE_URL . "/login");
             exit();
 
         }
@@ -62,7 +62,7 @@ class CandidatoController extends Controller{
 
         if($_SESSION["usuario"]["id_rol"]!=3){
 
-            header("Location: /EmpleoLocal/public/login.php");
+            header("Location: " . BASE_URL . "/login");
             exit();
 
         }
@@ -168,7 +168,7 @@ class CandidatoController extends Controller{
             if($extension!="pdf"){
 
                 header(
-                    "Location: candidato.php?action=perfil&error=pdf"
+                    "Location: " . BASE_URL . "/candidato/perfil?error=pdf"
                 );
 
                 exit();
@@ -179,7 +179,7 @@ class CandidatoController extends Controller{
             if($_FILES["curriculum"]["size"]>5*1024*1024){
 
                 header(
-                    "Location: candidato.php?action=perfil&error=size"
+                    "Location: " . BASE_URL . "/candidato/perfil?error=size"
                 );
 
                 exit();
@@ -195,6 +195,15 @@ class CandidatoController extends Controller{
             __DIR__.
             "/../../public/uploads/curriculums/".
             $nombreArchivo;
+
+
+            // Crear la carpeta de destino automáticamente si no existe
+            // (evita depender de que la carpeta ya venga creada al clonar el proyecto)
+            $carpetaDestino = dirname($rutaDestino);
+
+            if (!is_dir($carpetaDestino)) {
+                mkdir($carpetaDestino, 0755, true);
+            }
 
 
             if(
@@ -238,7 +247,7 @@ class CandidatoController extends Controller{
 
 
         header(
-            "Location: candidato.php?action=perfil&ok=1"
+            "Location: " . BASE_URL . "/candidato/perfil?ok=1"
         );
 
         exit();
@@ -334,7 +343,7 @@ class CandidatoController extends Controller{
         ){
 
             header(
-                "Location: candidato.php?action=perfil&error=completar"
+                "Location: " . BASE_URL . "/candidato/perfil?error=completar"
             );
 
             exit();
@@ -367,7 +376,7 @@ class CandidatoController extends Controller{
         ){
 
             header(
-                "Location: candidato.php?action=detalleOferta&id=".$idOferta."&error=duplicado"
+                "Location: " . BASE_URL . "/candidato/detalleOferta?id=".$idOferta."&error=duplicado"
             );
 
             exit();
@@ -386,7 +395,7 @@ class CandidatoController extends Controller{
 
 
         header(
-            "Location: candidato.php?action=misPostulaciones&ok=1"
+            "Location: " . BASE_URL . "/candidato/misPostulaciones?ok=1"
         );
 
         exit();
@@ -450,7 +459,7 @@ class CandidatoController extends Controller{
 
 
         header(
-            "Location: candidato.php?action=misPostulaciones&cancelado=1"
+            "Location: " . BASE_URL . "/candidato/misPostulaciones?cancelado=1"
         );
 
         exit();

@@ -7,110 +7,96 @@ require_once __DIR__ . "/../layouts/navbar.php";
 
 <div class="container mt-5">
 
-<div class="row justify-content-center">
+    <div class="row justify-content-center">
 
-<div class="col-md-6">
+        <div class="col-md-6">
 
-<div class="card shadow">
+            <div class="card shadow">
 
-<div class="card-body">
+                <div class="card-body">
 
-<h3 class="text-center">
-Crear cuenta
-</h3>
+                    <h3 class="text-center">
+                        Crear cuenta
+                    </h3>
 
-<form method="POST">
+                    <form method="POST">
 
-<div class="mb-3">
+                        <div class="mb-3">
 
-<label>
-Nombre completo
-</label>
+                            <label>
+                                Nombre completo
+                            </label>
 
-<input
-class="form-control"
-name="nombre"
-required>
+                            <input class="form-control" name="nombre" required>
 
-</div>
+                        </div>
 
-<div class="mb-3">
+                        <div class="mb-3">
 
-<label>
-Correo
-</label>
+                            <label>
+                                Correo
+                            </label>
 
-<input
-type="email"
-class="form-control"
-name="correo"
-required>
+                            <input type="email" class="form-control" name="correo" required>
 
-</div>
+                        </div>
 
-<div class="mb-3">
+                        <div class="mb-3">
 
-<label>
-Contraseña
-</label>
+                            <label>
+                                Contraseña
+                            </label>
 
-<input
-type="password"
-class="form-control"
-name="password"
-required>
+                            <input type="password" class="form-control" name="password" required>
 
-</div>
+                        </div>
 
-<div class="mb-3">
+                        <div class="mb-3">
 
-<label>
-Tipo de usuario
-</label>
+                            <label>
+                                Tipo de usuario
+                            </label>
 
-<select
-class="form-select"
-name="id_rol">
+                            <select class="form-select" name="id_rol">
 
-<option value="3">
-Candidato
-</option>
+                                <option value="3">
+                                    Candidato
+                                </option>
 
-<option value="2">
-Empresa
-</option>
+                                <option value="2">
+                                    Empresa
+                                </option>
 
-</select>
+                            </select>
 
-</div>
+                        </div>
 
-<button
-class="btn btn-success w-100">
-Registrarse
-</button>
+                        <button class="btn btn-success w-100">
+                            Registrarse
+                        </button>
 
-<div class="text-center mt-3">
+                        <div class="text-center mt-3">
 
-<p class="mb-0">
-¿Ya tienes una cuenta?
+                            <p class="mb-0">
+                                ¿Ya tienes una cuenta?
 
-<a href="<?= BASE_URL ?>/login.php">
-Ingresa aquí
-</a>
+                                <a href="<?= BASE_URL ?>/login">
+                                    Ingresa aquí
+                                </a>
 
-</p>
+                            </p>
 
-</div>
+                        </div>
 
-</form>
+                    </form>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </div>
 

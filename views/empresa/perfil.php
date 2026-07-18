@@ -51,7 +51,7 @@ data-bs-dismiss="alert">
 </h3>
 
 <form method="POST"
-action="/EmpleoLocal/public/empresa.php?action=actualizarPerfil">
+action="/EmpleoLocal/public/empresa/actualizarPerfil">
 
 <?php
 // ==========================
@@ -167,7 +167,7 @@ value="<?= htmlspecialchars($empresa["sitio_web"]); ?>">
 
 <div class="d-flex justify-content-between">
 
-<a href="/EmpleoLocal/public/empresa.php?action=dashboard"
+<a href="/EmpleoLocal/public/empresa/dashboard"
 class="btn btn-secondary">
 
 ← Volver al panel

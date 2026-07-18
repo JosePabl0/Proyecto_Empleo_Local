@@ -18,7 +18,7 @@ require_once __DIR__."/../layouts/navbar.php";
 🏢 <?= htmlspecialchars($oferta["nombre_empresa"] ?? "Empresa"); ?>
 </h5>
 
-<a href="/EmpleoLocal/public/candidato.php?action=verEmpresa&id=<?= $oferta["id_empresa"]; ?>"
+<a href="/EmpleoLocal/public/candidato/verEmpresa?id=<?= $oferta["id_empresa"]; ?>"
 class="btn btn-outline-primary btn-sm mb-3">
 🏢 Ver información de la empresa
 </a>
@@ -107,7 +107,7 @@ $perfilCompleto =
 
 </div>
 
-<a href="/EmpleoLocal/public/candidato.php?action=perfil"
+<a href="/EmpleoLocal/public/candidato/perfil"
 class="btn btn-primary">
 
 👤 Completar perfil
@@ -116,7 +116,7 @@ class="btn btn-primary">
 
 <?php else: ?>
 
-<a href="/EmpleoLocal/public/candidato.php?action=postular&id=<?= $oferta["id_oferta"]; ?>"
+<a href="/EmpleoLocal/public/candidato/postular?id=<?= $oferta["id_oferta"]; ?>"
 class="btn btn-success">
 
 📩 Postularme
@@ -125,7 +125,7 @@ class="btn btn-success">
 
 <?php endif; ?>
 
-<a href="/EmpleoLocal/public/candidato.php?action=explorar"
+<a href="/EmpleoLocal/public/candidato/explorar"
 class="btn btn-secondary ms-2">
 
 Volver

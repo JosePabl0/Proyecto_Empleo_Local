@@ -29,7 +29,7 @@ Gestiona las ofertas publicadas por tu empresa.
 
 </div>
 
-<a href="/EmpleoLocal/public/empresa.php?action=crearOferta"
+<a href="/EmpleoLocal/public/empresa/crearOferta"
 class="btn btn-primary">
 
 ➕ Nueva oferta
@@ -152,14 +152,14 @@ Inactiva
 
 <td>
 
-<a href="/EmpleoLocal/public/empresa.php?action=verCandidatos&id=<?= $oferta["id_oferta"]; ?>"
+<a href="/EmpleoLocal/public/empresa/verCandidatos?id=<?= $oferta["id_oferta"]; ?>"
 class="btn btn-info btn-sm">
 
 👥 Candidatos
 
 </a>
 
-<a href="/EmpleoLocal/public/empresa.php?action=eliminarOferta&id=<?= $oferta["id_oferta"]; ?>"
+<a href="/EmpleoLocal/public/empresa/eliminarOferta?id=<?= $oferta["id_oferta"]; ?>"
 class="btn btn-danger btn-sm"
 onclick="return confirm('¿Desea eliminar esta oferta?');">
 
@@ -203,14 +203,14 @@ Todavía no has publicado ninguna oferta laboral.
 
 <div class="mt-3 d-flex justify-content-between">
 
-<a href="/EmpleoLocal/public/empresa.php?action=dashboard"
+<a href="/EmpleoLocal/public/empresa/dashboard"
 class="btn btn-secondary">
 
 ← Volver al panel
 
 </a>
 
-<a href="/EmpleoLocal/public/empresa.php?action=crearOferta"
+<a href="/EmpleoLocal/public/empresa/crearOferta"
 class="btn btn-success">
 
 Publicar otra oferta
