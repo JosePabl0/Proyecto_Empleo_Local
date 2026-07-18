@@ -23,7 +23,7 @@ Mi perfil profesional 👤
 <?php endif; ?>
 
 <form method="POST"
-action="/EmpleoLocal/public/candidato.php?action=actualizarPerfil"
+action="<?= BASE_URL ?>/candidato/actualizarPerfil"
 enctype="multipart/form-data">
 
 <div class="mb-3">
@@ -148,7 +148,7 @@ Guardar cambios
 </button>
 
 <a
-href="/EmpleoLocal/public/candidato.php?action=dashboard"
+href="/EmpleoLocal/public/candidato/dashboard"
 class="btn btn-secondary">
 
 Volver

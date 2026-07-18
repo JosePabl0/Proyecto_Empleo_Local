@@ -55,7 +55,7 @@ class EmpresaController extends Controller{
         if(!isset($_SESSION["usuario"])){
 
             header(
-                "Location: /EmpleoLocal/public/login.php"
+                "Location: " . BASE_URL . "/login"
             );
 
             exit();
@@ -68,7 +68,7 @@ class EmpresaController extends Controller{
         if($_SESSION["usuario"]["id_rol"] != 2){
 
             header(
-                "Location: /EmpleoLocal/public/login.php"
+                "Location: " . BASE_URL . "/login"
             );
 
             exit();
@@ -190,7 +190,7 @@ class EmpresaController extends Controller{
 
 
         header(
-            "Location: empresa.php?action=perfil&ok=1"
+            "Location: " . BASE_URL . "/empresa/perfil?ok=1"
         );
 
         exit();
@@ -288,7 +288,7 @@ class EmpresaController extends Controller{
 
 
         header(
-            "Location: empresa.php?action=misOfertas"
+            "Location: " . BASE_URL . "/empresa/misOfertas"
         );
 
         exit();
@@ -367,7 +367,7 @@ class EmpresaController extends Controller{
 
 
         header(
-            "Location: empresa.php?action=misOfertas"
+            "Location: " . BASE_URL . "/empresa/misOfertas"
         );
 
         exit();
@@ -472,7 +472,7 @@ class EmpresaController extends Controller{
 
 
         header(
-            "Location: empresa.php?action=verCandidatos&id=".$idOferta
+            "Location: " . BASE_URL . "/empresa/verCandidatos?id=".$idOferta
         );
 
 

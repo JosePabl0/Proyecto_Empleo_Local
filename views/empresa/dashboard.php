@@ -39,7 +39,7 @@ require_once __DIR__ . "/../layouts/navbar.php";
 
 </div>
 
-<a href="/EmpleoLocal/public/empresa.php?action=perfil"
+<a href="/EmpleoLocal/public/empresa/perfil"
 class="btn btn-warning">
 
 Editar perfil
@@ -163,7 +163,7 @@ Crear nueva oferta
 Publica una nueva oportunidad laboral.
 </p>
 
-<a href="/EmpleoLocal/public/empresa.php?action=crearOferta"
+<a href="/EmpleoLocal/public/empresa/crearOferta"
 class="btn btn-primary">
 
 Crear oferta
@@ -191,7 +191,7 @@ Mis ofertas
 Consulta y elimina tus publicaciones.
 </p>
 
-<a href="/EmpleoLocal/public/empresa.php?action=misOfertas"
+<a href="/EmpleoLocal/public/empresa/misOfertas"
 class="btn btn-success">
 
 Ver ofertas
@@ -219,7 +219,7 @@ Mi perfil
 Actualiza la información pública de tu empresa.
 </p>
 
-<a href="/EmpleoLocal/public/empresa.php?action=perfil"
+<a href="/EmpleoLocal/public/empresa/perfil"
 class="btn btn-warning">
 
 Editar perfil

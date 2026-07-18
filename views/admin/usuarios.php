@@ -7,101 +7,101 @@ require_once "../layouts/navbar.php";
 
 <div class="container mt-5">
 
-<h2>
-Usuarios registrados
-</h2>
+    <h2>
+        Usuarios registrados
+    </h2>
 
-<table class="table table-striped mt-4">
+    <table class="table table-striped mt-4">
 
-<thead>
+        <thead>
 
-<tr>
+            <tr>
 
-<th>
-Nombre
-</th>
+                <th>
+                    Nombre
+                </th>
 
-<th>
-Correo
-</th>
+                <th>
+                    Correo
+                </th>
 
-<th>
-Rol
-</th>
+                <th>
+                    Rol
+                </th>
 
-<th>
-Estado
-</th>
+                <th>
+                    Estado
+                </th>
 
-<th>
-Acciones
-</th>
+                <th>
+                    Acciones
+                </th>
 
-</tr>
+            </tr>
 
-</thead>
+        </thead>
 
-<tbody>
+        <tbody>
 
-<tr>
+            <tr>
 
-<td>
-Juan Pérez
-</td>
+                <td>
+                    Juan Pérez
+                </td>
 
-<td>
-juan@email.com
-</td>
+                <td>
+                    juan@email.com
+                </td>
 
-<td>
-Candidato
-</td>
+                <td>
+                    Candidato
+                </td>
 
-<td>
-Activo
-</td>
+                <td>
+                    Activo
+                </td>
 
-<td>
+                <td>
 
-<button class="btn btn-warning btn-sm">
-Bloquear
-</button>
+                    <button class="btn btn-warning btn-sm">
+                        Bloquear
+                    </button>
 
-</td>
+                </td>
 
-</tr>
+            </tr>
 
-<tr>
+            <tr>
 
-<td>
-Empresa ABC
-</td>
+                <td>
+                    Empresa ABC
+                </td>
 
-<td>
-contacto@empresa.com
-</td>
+                <td>
+                    contacto@empresa.com
+                </td>
 
-<td>
-Empresa
-</td>
+                <td>
+                    Empresa
+                </td>
 
-<td>
-Activo
-</td>
+                <td>
+                    Activo
+                </td>
 
-<td>
+                <td>
 
-<button class="btn btn-warning btn-sm">
-Bloquear
-</button>
+                    <button class="btn btn-warning btn-sm">
+                        Bloquear
+                    </button>
 
-</td>
+                </td>
 
-</tr>
+            </tr>
 
-</tbody>
+        </tbody>
 
-</table>
+    </table>
 
 </div>
 

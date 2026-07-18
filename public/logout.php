@@ -5,7 +5,7 @@ session_start();
 session_destroy();
 
 header(
-    "Location: /EmpleoLocal/public/login.php"
+    "Location: /EmpleoLocal/public/login"
 );
 
 exit();

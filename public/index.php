@@ -1,33 +1,33 @@
 <?php
-// PAGINA PRINCIPAL INDEX
-if(session_status() == PHP_SESSION_NONE){
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+?>
+<?php
+
+// Página principal index
+if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-// REDIRECCIONAR USUARIO CON SESION ACTIVA
-if(isset($_SESSION["usuario"])){
-
-    switch($_SESSION["usuario"]["id_rol"]){
-
+// Redireccionar usuario con sesión activa
+if (isset($_SESSION["usuario"])) {
+    switch ($_SESSION["usuario"]["id_rol"]) {
         case 1:
             header("Location: admin.php?action=dashboard");
             exit();
-
         case 2:
             header("Location: empresa.php?action=dashboard");
             exit();
-
         case 3:
             header("Location: candidato.php?action=dashboard");
             exit();
-
     }
-
 }
 
-// CARGAR LAYOUT
+// Cargar layout
+require_once "../app/config/constants.php";
 require_once "../views/layouts/header.php";
-require_once "../views/layouts/navbar.php";
 
 ?>
 
@@ -53,7 +53,7 @@ require_once "../views/layouts/navbar.php";
                     Encuentra empleos, publica vacantes y construye nuevas oportunidades.
                 </p>
 
-                <a href="<?= BASE_URL ?>/login.php"
+                <a href="<?= BASE_URL ?>/login"
                 class="btn btn-primary btn-lg mt-4">
                     Empezar
                 </a>

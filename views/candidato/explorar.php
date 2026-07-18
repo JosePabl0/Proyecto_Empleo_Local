@@ -67,7 +67,7 @@ Explora las ofertas disponibles y encuentra la oportunidad ideal.
 
 </p>
 
-<a href="/EmpleoLocal/public/candidato.php?action=detalleOferta&id=<?= $oferta["id_oferta"]; ?>"
+<a href="/EmpleoLocal/public/candidato/detalleOferta?id=<?= $oferta["id_oferta"]; ?>"
 class="btn btn-primary">
 
 Ver oferta
@@ -94,7 +94,7 @@ No hay ofertas disponibles actualmente.
 
 <?php endif; ?>
 
-<a href="/EmpleoLocal/public/candidato.php"
+<a href="/EmpleoLocal/public/candidato/dashboard"
 class="btn btn-secondary">
 
 Volver al panel

@@ -32,7 +32,7 @@ Oferta:
 
 </div>
 
-<a href="/EmpleoLocal/public/empresa.php?action=misOfertas"
+<a href="/EmpleoLocal/public/empresa/misOfertas"
 class="btn btn-secondary">
 
 ← Volver
@@ -135,7 +135,7 @@ El candidato no tiene currículum cargado.
 <div class="col-md-4">
 
 <form method="POST"
-action="/EmpleoLocal/public/empresa.php?action=actualizarEstado">
+action="/EmpleoLocal/public/empresa/actualizarEstado">
 
 
 <input type="hidden"

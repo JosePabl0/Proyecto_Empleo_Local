@@ -7,41 +7,41 @@ require_once "../layouts/navbar.php";
 
 <div class="container mt-5">
 
-<h2>
-Reportes del sistema
-</h2>
+    <h2>
+        Reportes del sistema
+    </h2>
 
-<div class="card shadow mt-4">
+    <div class="card shadow mt-4">
 
-<div class="card-body">
+        <div class="card-body">
 
-<h5>
-Estadísticas generales
-</h5>
+            <h5>
+                Estadísticas generales
+            </h5>
 
-<ul>
+            <ul>
 
-<li>
-Usuarios nuevos este mes: 35
-</li>
+                <li>
+                    Usuarios nuevos este mes: 35
+                </li>
 
-<li>
-Ofertas publicadas: 80
-</li>
+                <li>
+                    Ofertas publicadas: 80
+                </li>
 
-<li>
-Contrataciones realizadas: 20
-</li>
+                <li>
+                    Contrataciones realizadas: 20
+                </li>
 
-<li>
-Empresas activas: 50
-</li>
+                <li>
+                    Empresas activas: 50
+                </li>
 
-</ul>
+            </ul>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </div>
 

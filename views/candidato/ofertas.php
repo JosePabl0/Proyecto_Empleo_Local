@@ -38,7 +38,7 @@ Postular
 </button>
 
 <button class="btn btn-outline-danger">
-♡ Favorito
+ Favorito
 </button>
 
 </div>

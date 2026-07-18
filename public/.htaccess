@@ -1,0 +1,35 @@
+
+# URLs limpias para todas las paginas del proyecto
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /EmpleoLocal/public/
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    RewriteRule ^login$                  login.php               [L,QSA]
+    RewriteRule ^registro$                registro.php            [L,QSA]
+    RewriteRule ^logout$                  logout.php              [L,QSA]
+    RewriteRule ^verificar$               verificar.php           [L,QSA]
+    RewriteRule ^ofertas$                 ofertas.php             [L,QSA]
+    RewriteRule ^olvide-password$         olvide-password.php     [L,QSA]
+    RewriteRule ^recuperar$               recuperar.php           [L,QSA]
+
+    RewriteRule ^empresa/([a-zA-Z_]+)$    empresa.php?action=$1   [L,QSA]
+    RewriteRule ^empresa/perfil$          perfil_empresa.php      [L,QSA]
+    RewriteRule ^empresa/ofertas$         ofertas_empresa.php     [L,QSA]
+    RewriteRule ^empresa/actualizar$      actualizar_empresa.php  [L,QSA]
+    RewriteRule ^empresa/crear-oferta$    crear_oferta.php        [L,QSA]
+    RewriteRule ^empresa/editar-oferta$   editar_oferta.php       [L,QSA]
+    RewriteRule ^empresa/eliminar-oferta$ eliminar_oferta.php     [L,QSA]
+    RewriteRule ^empresa/guardar-oferta$  guardar_oferta.php      [L,QSA]
+
+    RewriteRule ^candidato/([a-zA-Z_]+)$  candidato.php?action=$1 [L,QSA]
+</IfModule>
+
+Options -Indexes
+
+<FilesMatch "\.(sql|log|md)$">
+    Order deny,allow
+    Deny from all
+</FilesMatch>
