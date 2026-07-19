@@ -5,7 +5,7 @@ require_once __DIR__ . "/../layouts/navbar.php";
 ?>
 
 <!-- Contenido principal -->
-<div class="container mt-5">
+<div class="container mt-5 espacio-antes-footer">
 
     <?php if (isset($perfil)): ?>
         <!-- Información del candidato -->

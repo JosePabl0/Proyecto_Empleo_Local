@@ -49,9 +49,7 @@ require_once __DIR__ . "/../layouts/navbar.php";
 
                             <p class="mb-0">
                                 ¿No tienes una cuenta?
-                                <a href="<?= BASE_URL ?>/registro.php">
-                                    Regístrate aquí
-                                </a>
+                                <a href="<?= BASE_URL ?>/registro" class="fw-semibold">Regístrate aquí</a>
                             </p>
 
                         </div>
