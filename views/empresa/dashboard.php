@@ -12,7 +12,7 @@ require_once __DIR__ . "/../layouts/navbar.php";
      CONTENIDO PRINCIPAL
 ========================== -->
 
-<div class="container mt-5">
+<div class="container mt-5 espacio-antes-footer">
 
 
 <!-- ==========================
