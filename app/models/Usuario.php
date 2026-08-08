@@ -1,6 +1,7 @@
 <?php
+
 // MODELO USUARIO
-require_once __DIR__."/../core/Model.php";
+require_once __DIR__ . "/../core/Model.php";
 
 class Usuario extends Model{
 
@@ -133,9 +134,18 @@ class Usuario extends Model{
     // BUSCAR USUARIO POR ID
     public function buscarPorId($id){
 
-        $sql="SELECT *
-              FROM usuarios
-              WHERE id_usuario=:id";
+        $sql="SELECT
+              u.id_usuario,
+              u.nombre,
+              u.correo,
+              u.password,
+              u.id_rol,
+              r.nombre AS rol,
+              u.estado
+              FROM usuarios u
+              INNER JOIN roles r
+              ON u.id_rol=r.id_rol
+              WHERE u.id_usuario=:id";
 
         $stmt=$this->db->prepare($sql);
 
@@ -150,7 +160,7 @@ class Usuario extends Model{
     // OBTENER TODOS LOS USUARIOS
     public function obtenerTodos(){
 
-        $sql="SELECT 
+        $sql="SELECT
               u.id_usuario,
               u.nombre,
               u.correo,
@@ -165,6 +175,114 @@ class Usuario extends Model{
         $stmt->execute();
 
         return $stmt->fetchAll();
+
+    }
+
+    // BUSCAR USUARIO POR CORREO SIN IMPORTAR ESTADO
+    public function buscarPorCorreo($correo){
+
+        $sql="SELECT *
+              FROM usuarios
+              WHERE correo=:correo";
+
+        $stmt=$this->db->prepare($sql);
+
+        $stmt->execute([
+            ":correo"=>$correo
+        ]);
+
+        return $stmt->fetch();
+
+    }
+
+    // BLOQUEAR USUARIO
+    public function bloquear($idUsuario){
+
+        $sql="UPDATE usuarios
+              SET estado=0
+              WHERE id_usuario=:id
+              AND id_rol<>1";
+
+        $stmt=$this->db->prepare($sql);
+
+        return $stmt->execute([
+            ":id"=>$idUsuario
+        ]);
+
+    }
+
+    // DESBLOQUEAR USUARIO
+    public function desbloquear($idUsuario){
+
+        $sql="UPDATE usuarios
+              SET estado=1
+              WHERE id_usuario=:id
+              AND id_rol<>1";
+
+        $stmt=$this->db->prepare($sql);
+
+        return $stmt->execute([
+            ":id"=>$idUsuario
+        ]);
+
+    }
+
+    // CREAR NOTIFICACION
+    public function crearNotificacion($idUsuario,$mensaje){
+
+        $sql="INSERT INTO notificaciones
+        (
+            id_usuario,
+            mensaje
+        )
+        VALUES
+        (
+            :usuario,
+            :mensaje
+        )";
+
+        $stmt=$this->db->prepare($sql);
+
+        return $stmt->execute([
+            ":usuario"=>$idUsuario,
+            ":mensaje"=>$mensaje
+        ]);
+
+    }
+
+    // OBTENER NOTIFICACIONES NO LEIDAS
+    public function obtenerNotificacionesNoLeidas($idUsuario){
+
+        $sql="SELECT *
+              FROM notificaciones
+              WHERE id_usuario=:usuario
+              AND leido=0
+              ORDER BY fecha DESC";
+
+        $stmt=$this->db->prepare($sql);
+
+        $stmt->execute([
+            ":usuario"=>$idUsuario
+        ]);
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    }
+
+    // MARCAR NOTIFICACION COMO LEIDA
+    public function marcarNotificacionLeida($idNotificacion,$idUsuario){
+
+        $sql="UPDATE notificaciones
+              SET leido=1
+              WHERE id_notificacion=:notificacion
+              AND id_usuario=:usuario";
+
+        $stmt=$this->db->prepare($sql);
+
+        return $stmt->execute([
+            ":notificacion"=>$idNotificacion,
+            ":usuario"=>$idUsuario
+        ]);
 
     }
 

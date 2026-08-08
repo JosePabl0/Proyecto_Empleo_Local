@@ -25,21 +25,21 @@ class AuthController extends Controller{
 
                 // REDIRECCION ADMIN
                 case 1:
-                    header("Location: ".BASE_URL."/admin.php?action=dashboard");
+                    header("Location: /EmpleoLocal/public/admin.php?action=dashboard");
                     break;
 
                 // REDIRECCION EMPRESA
                 case 2:
-                    header("Location: ".BASE_URL."/empresa.php?action=dashboard");
+                    header("Location: /EmpleoLocal/public/empresa.php?action=dashboard");
                     break;
 
                 // REDIRECCION CANDIDATO
                 case 3:
-                    header("Location: ".BASE_URL."/candidato.php?action=dashboard");
+                    header("Location: /EmpleoLocal/public/candidato.php?action=dashboard");
                     break;
 
                 default:
-                    header("Location: ".BASE_URL."/index.php");
+                    header("Location: /EmpleoLocal/public/index.php");
                     break;
             }
 
@@ -73,19 +73,19 @@ class AuthController extends Controller{
                 switch($usuario["id_rol"]){
 
                     case 1:
-                        header("Location: ".BASE_URL."/admin.php?action=dashboard");
+                        header("Location: /EmpleoLocal/public/admin.php?action=dashboard");
                         break;
 
                     case 2:
-                        header("Location: ".BASE_URL."/empresa.php?action=dashboard");
+                        header("Location: /EmpleoLocal/public/empresa.php?action=dashboard");
                         break;
 
                     case 3:
-                        header("Location: ".BASE_URL."/candidato.php?action=dashboard");
+                        header("Location: /EmpleoLocal/public/candidato.php?action=dashboard");
                         break;
 
                     default:
-                        header("Location: ".BASE_URL."/index.php");
+                        header("Location: /EmpleoLocal/public/index.php");
                         break;
                 }
 
@@ -121,7 +121,7 @@ class AuthController extends Controller{
             // GUARDAR USUARIO
             if($this->usuario->registrar($datos)){
 
-                header("Location: ".BASE_URL."/login.php");
+                header("Location: /EmpleoLocal/public/login.php");
                 exit();
 
             }
@@ -141,10 +141,9 @@ class AuthController extends Controller{
 
         session_destroy();
 
-        header("Location: ".BASE_URL."/login.php");
+        header("Location: /EmpleoLocal/public/login.php");
         exit();
     }
 
 }
-
 ?>

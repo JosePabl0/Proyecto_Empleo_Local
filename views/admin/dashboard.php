@@ -1,192 +1,146 @@
 <?php
-// VISTA DASHBOARD ADMIN
-require_once "../layouts/header.php";
-require_once "../layouts/navbar.php";
-
+// DASHBOARD ADMINISTRADOR
+require_once __DIR__."/../layouts/header.php";
+require_once __DIR__."/../layouts/navbar.php";
 ?>
 
-<div class="container mt-5">
+<div class="container mt-4">
 
-<h2>
-Panel Administrativo 🛠️
-</h2>
+```
+<div class="d-flex justify-content-between align-items-center mb-4">
 
-<p class="text-muted">
-Control general de la plataforma EmpleoLocal.
-</p>
+    <div>
+        <h1>Panel de Administración</h1>
 
-<div class="row mt-4">
-
-<div class="col-md-3">
-
-<div class="card shadow text-center">
-
-<div class="card-body">
-
-<h2>
-250
-</h2>
-
-<p>
-Usuarios registrados
-</p>
+        <p class="text-muted">
+            Supervisión general de la plataforma IMPULSA.
+        </p>
+    </div>
 
 </div>
 
-</div>
+<!-- ESTADISTICAS -->
+<div class="row g-4 mb-4">
+
+    <!-- USUARIOS -->
+    <div class="col-md-4">
+
+        <div class="card shadow-sm h-100">
+
+            <div class="card-body">
+
+                <h5 class="card-title">
+                    👥 Usuarios
+                </h5>
+
+                <h2 class="mt-3">
+                    <?= count($usuarios) ?>
+                </h2>
+
+                <p class="text-muted mb-0">
+                    Usuarios registrados
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- EMPRESAS -->
+    <div class="col-md-4">
+
+        <div class="card shadow-sm h-100">
+
+            <div class="card-body">
+
+                <h5 class="card-title">
+                    🏢 Empresas
+                </h5>
+
+                <h2 class="mt-3">
+                    <?= count($empresas) ?>
+                </h2>
+
+                <p class="text-muted mb-0">
+                    Empresas registradas
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CANDIDATOS -->
+    <div class="col-md-4">
+
+        <div class="card shadow-sm h-100">
+
+            <div class="card-body">
+
+                <h5 class="card-title">
+                    👤 Candidatos
+                </h5>
+
+                <h2 class="mt-3">
+                    <?= count($candidatos) ?>
+                </h2>
+
+                <p class="text-muted mb-0">
+                    Candidatos registrados
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 
-<div class="col-md-3">
+<!-- ACCIONES ADMINISTRATIVAS -->
+<div class="card shadow-sm">
 
-<div class="card shadow text-center">
+    <div class="card-body">
 
-<div class="card-body">
+        <h4 class="mb-3">
+            Administración
+        </h4>
 
-<h2>
-120
-</h2>
+        <div class="d-flex gap-2 flex-wrap">
 
-<p>
-Candidatos
-</p>
+            <a
+                href="<?= BASE_URL ?>/admin.php?action=usuarios"
+                class="btn btn-primary"
+            >
+                👥 Gestionar usuarios
+            </a>
 
-</div>
+            <a
+                href="<?= BASE_URL ?>/admin.php?action=empresas"
+                class="btn btn-secondary"
+            >
+                🏢 Gestionar empresas
+            </a>
 
-</div>
+            <a
+                href="<?= BASE_URL ?>/admin.php?action=reportes"
+                class="btn btn-outline-primary"
+            >
+                📊 Ver reportes
+            </a>
 
-</div>
+        </div>
 
-<div class="col-md-3">
-
-<div class="card shadow text-center">
-
-<div class="card-body">
-
-<h2>
-50
-</h2>
-
-<p>
-Empresas
-</p>
-
-</div>
-
-</div>
+    </div>
 
 </div>
-
-<div class="col-md-3">
-
-<div class="card shadow text-center">
-
-<div class="card-body">
-
-<h2>
-340
-</h2>
-
-<p>
-Ofertas publicadas
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<hr class="my-5">
-
-<h3>
-Acciones administrativas
-</h3>
-
-<div class="row mt-4">
-
-<div class="col-md-4">
-
-<div class="card">
-
-<div class="card-body">
-
-<h5>
-Usuarios
-</h5>
-
-<p>
-Gestionar cuentas del sistema.
-</p>
-
-<a href="usuarios.php"
-class="btn btn-primary">
-Administrar
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="card">
-
-<div class="card-body">
-
-<h5>
-Empresas
-</h5>
-
-<p>
-Revisar empresas registradas.
-</p>
-
-<a href="empresas.php"
-class="btn btn-success">
-Ver empresas
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="card">
-
-<div class="card-body">
-
-<h5>
-Reportes
-</h5>
-
-<p>
-Consultar estadísticas.
-</p>
-
-<a href="reportes.php"
-class="btn btn-dark">
-Ver reportes
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+```
 
 </div>
 
 <?php
 // FOOTER
-require_once "../layouts/footer.php";
+require_once __DIR__."/../layouts/footer.php";
 ?>
