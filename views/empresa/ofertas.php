@@ -29,10 +29,7 @@ Gestiona las ofertas publicadas por tu empresa.
 
 </div>
 
-<a href="/EmpleoLocal/public/empresa/crearOferta"
-class="btn btn-primary">
 
-➕ Nueva oferta
 
 </a>
 

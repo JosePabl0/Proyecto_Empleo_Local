@@ -24,7 +24,9 @@
     RewriteRule ^empresa/eliminar-oferta$ eliminar_oferta.php     [L,QSA]
     RewriteRule ^empresa/guardar-oferta$  guardar_oferta.php      [L,QSA]
 
+
     RewriteRule ^candidato/([a-zA-Z_]+)$  candidato.php?action=$1 [L,QSA]
+    RewriteRule ^admin/([a-zA-Z_]+)$    admin.php?action=$1   [L,QSA]
 </IfModule>
 
 Options -Indexes

@@ -286,6 +286,24 @@ class Usuario extends Model{
 
     }
 
+
+
+    // CONTAR USUARIOS NUEVOS ESTE MES (para reportes admin)
+    public function contarNuevosEsteMes()
+    {
+
+        $sql = "SELECT COUNT(*) AS total
+                FROM usuarios
+                WHERE MONTH(fecha_registro) = MONTH(CURDATE())
+                AND YEAR(fecha_registro) = YEAR(CURDATE())";
+
+        $stmt = $this->db->prepare($sql);
+
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC)["total"];
+
+    }
 }
 
 ?>

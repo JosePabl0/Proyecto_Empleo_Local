@@ -55,7 +55,7 @@ class AdminController extends Controller{
         $candidatos = $this->candidato->obtenerTodos();
 
         $usuario = $_SESSION["usuario"] ?? null;
-        $logoDestino = BASE_URL."/admin.php?action=dashboard";
+        $logoDestino = BASE_URL."/admin/dashboard";
 
         require_once __DIR__."/../../views/layouts/header.php";
         require_once __DIR__."/../../views/layouts/navbar.php";
@@ -71,7 +71,7 @@ class AdminController extends Controller{
         $usuarios = $this->usuario->obtenerTodos();
 
         $usuario = $_SESSION["usuario"] ?? null;
-        $logoDestino = BASE_URL."/admin.php?action=dashboard";
+        $logoDestino = BASE_URL."/admin/dashboard";
 
         require_once __DIR__."/../../views/layouts/header.php";
         require_once __DIR__."/../../views/layouts/navbar.php";
@@ -88,7 +88,7 @@ class AdminController extends Controller{
 
         if(!$idUsuario){
 
-            header("Location: ".BASE_URL."/admin.php?action=usuarios");
+            header("Location: ".BASE_URL."/admin/usuarios");
             exit();
         }
 
@@ -97,7 +97,7 @@ class AdminController extends Controller{
 
         if(!$usuarioSeleccionado){
 
-            header("Location: ".BASE_URL."/admin.php?action=usuarios");
+           header("Location: ".BASE_URL."/admin/usuarios");
             exit();
         }
 
@@ -126,7 +126,7 @@ class AdminController extends Controller{
         // USUARIO DE LA SESION PARA EL NAVBAR
         $usuario = $_SESSION["usuario"] ?? null;
 
-        $logoDestino = BASE_URL."/admin.php?action=dashboard";
+        $logoDestino = BASE_URL."/admin/dashboard";
 
         // CARGAR INTERFAZ
         require_once __DIR__."/../../views/layouts/header.php";
@@ -170,7 +170,7 @@ class AdminController extends Controller{
             }
         }
 
-        header("Location: ".BASE_URL."/admin.php?action=usuarios");
+       header("Location: ".BASE_URL."/admin/usuarios");
         exit();
     }
 
@@ -194,8 +194,54 @@ class AdminController extends Controller{
             }
         }
 
-        header("Location: ".BASE_URL."/admin.php?action=usuarios");
+        header("Location: ".BASE_URL."/admin/usuarios");
         exit();
+    }
+
+
+
+    // LISTAR EMPRESAS
+    public function empresas(){
+
+        $this->verificarAdministrador();
+
+        $empresas = $this->empresa->obtenerTodas();
+
+        // Agregar cantidad de ofertas activas a cada empresa
+        foreach ($empresas as &$emp) {
+            $emp["total_ofertas"] = $this->empresa->contarOfertasActivas($emp["id_empresa"]);
+        }
+
+        $usuario = $_SESSION["usuario"] ?? null;
+        $logoDestino = BASE_URL."/admin/dashboard";
+
+        require_once __DIR__."/../../views/layouts/header.php";
+        require_once __DIR__."/../../views/layouts/navbar.php";
+        require_once __DIR__."/../../views/admin/empresas.php";
+        require_once __DIR__."/../../views/layouts/footer.php";
+    }
+
+    // REPORTES DEL SISTEMA
+    public function reportes(){
+
+        $this->verificarAdministrador();
+
+        // Estadísticas reales calculadas desde la base de datos
+        $usuariosNuevosMes  = $this->usuario->contarNuevosEsteMes();
+        $ofertasPublicadas  = $this->oferta->contarTotal();
+        $ofertasEsteMes     = $this->oferta->contarEsteMes();
+        $contrataciones     = $this->postulacion->contarAceptadas();
+        $totalPostulaciones = $this->postulacion->contarTotal();
+        $empresasActivas    = $this->empresa->contarActivas();
+        $totalEmpresas      = $this->empresa->contarTotal();
+
+        $usuario = $_SESSION["usuario"] ?? null;
+        $logoDestino = BASE_URL."/admin/dashboard";
+
+        require_once __DIR__."/../../views/layouts/header.php";
+        require_once __DIR__."/../../views/layouts/navbar.php";
+        require_once __DIR__."/../../views/admin/reportes.php";
+        require_once __DIR__."/../../views/layouts/footer.php";
     }
 }
 ?>

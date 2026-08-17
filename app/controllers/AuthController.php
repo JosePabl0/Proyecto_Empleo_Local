@@ -28,7 +28,7 @@ class AuthController extends Controller
 
                 // REDIRECCION ADMIN
                 case 1:
-                    header("Location: " . BASE_URL . "/admin.php?action=dashboard");
+                    header("Location: " . BASE_URL . "/admin/dashboard");  // ← CORREGIDO
                     break;
 
                 // REDIRECCION EMPRESA
@@ -77,7 +77,7 @@ class AuthController extends Controller
                 switch ($usuario["id_rol"]) {
 
                     case 1:
-                        header("Location: " . BASE_URL . "/admin.php?action=dashboard");
+                        header("Location: " . BASE_URL . "/admin/dashboard");  // ← CORREGIDO
                         break;
 
                     case 2:
@@ -115,15 +115,15 @@ class AuthController extends Controller
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // SEGURIDAD: Validar que el rol sea solo Candidato o Empresa
-    // Previene que alguien mande id_rol=1 para registrarse como admin
+            
             $rolesPermitidos = [2, 3];
             $idRol = (int) $_POST["id_rol"];
 
             if (!in_array($idRol, $rolesPermitidos)) {
-                header("Location: registro.php?error=rol_invalido");
+                header("Location: " . BASE_URL . "/registro?error=rol_invalido");  
                 exit();
             }
+
             // DATOS REGISTRO
             $datos = [
                 "nombre" => $_POST["nombre"],

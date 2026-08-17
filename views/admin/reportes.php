@@ -1,44 +1,85 @@
 <?php
 // VISTA REPORTES ADMIN
-require_once "../layouts/header.php";
-require_once "../layouts/navbar.php";
-
+require_once __DIR__ . "/../layouts/header.php";
+require_once __DIR__ . "/../layouts/navbar.php";
 ?>
 
-<div class="container mt-5">
+<div class="container mt-5 espacio-antes-footer">
 
-    <h2>
-        Reportes del sistema
-    </h2>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2>Reportes del sistema</h2>
+            <p class="text-muted mb-0">Estadísticas generales calculadas en tiempo real.</p>
+        </div>
 
-    <div class="card shadow mt-4">
+        <a href="<?= BASE_URL ?>/admin/dashboard" class="btn btn-outline-secondary">
+            ← Volver al panel
+        </a>
+    </div>
 
-        <div class="card-body">
+    <div class="row g-4">
 
-            <h5>
-                Estadísticas generales
-            </h5>
+        <div class="col-md-6 col-lg-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h2 class="text-primary"><?= $usuariosNuevosMes ?></h2>
+                    <p class="text-muted mb-0">Usuarios nuevos este mes</p>
+                </div>
+            </div>
+        </div>
 
-            <ul>
+        <div class="col-md-6 col-lg-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h2 class="text-success"><?= $ofertasPublicadas ?></h2>
+                    <p class="text-muted mb-0">Ofertas publicadas (total)</p>
+                </div>
+            </div>
+        </div>
 
-                <li>
-                    Usuarios nuevos este mes: 35
-                </li>
+        <div class="col-md-6 col-lg-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h2 class="text-warning"><?= $ofertasEsteMes ?></h2>
+                    <p class="text-muted mb-0">Ofertas publicadas este mes</p>
+                </div>
+            </div>
+        </div>
 
-                <li>
-                    Ofertas publicadas: 80
-                </li>
+        <div class="col-md-6 col-lg-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h2 class="text-info"><?= $contrataciones ?></h2>
+                    <p class="text-muted mb-0">Contrataciones realizadas</p>
+                </div>
+            </div>
+        </div>
 
-                <li>
-                    Contrataciones realizadas: 20
-                </li>
+        <div class="col-md-6 col-lg-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h2><?= $totalPostulaciones ?></h2>
+                    <p class="text-muted mb-0">Postulaciones totales</p>
+                </div>
+            </div>
+        </div>
 
-                <li>
-                    Empresas activas: 50
-                </li>
+        <div class="col-md-6 col-lg-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h2><?= $empresasActivas ?></h2>
+                    <p class="text-muted mb-0">Empresas con ofertas activas</p>
+                </div>
+            </div>
+        </div>
 
-            </ul>
-
+        <div class="col-md-6 col-lg-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h2><?= $totalEmpresas ?></h2>
+                    <p class="text-muted mb-0">Empresas registradas (total)</p>
+                </div>
+            </div>
         </div>
 
     </div>
@@ -47,5 +88,5 @@ require_once "../layouts/navbar.php";
 
 <?php
 // FOOTER
-require_once "../layouts/footer.php";
+require_once __DIR__ . "/../layouts/footer.php";
 ?>
