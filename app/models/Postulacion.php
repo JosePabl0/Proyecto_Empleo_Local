@@ -161,5 +161,39 @@ class Postulacion extends Model{
 
     }
 
+
+
+    // CONTAR TOTAL DE POSTULACIONES (para reportes admin)
+    public function contarTotal()
+    {
+
+        $sql = "SELECT COUNT(*) AS total FROM postulaciones";
+
+        $stmt = $this->db->prepare($sql);
+
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC)["total"];
+
+    }
+
+    // CONTAR POSTULACIONES ACEPTADAS (contrataciones realizadas)
+    // Asume que el estado con id_estado correspondiente a "Aceptado" existe
+    public function contarAceptadas()
+    {
+
+        $sql = "SELECT COUNT(*) AS total
+                FROM postulaciones p
+                INNER JOIN estados_postulacion ep
+                ON p.id_estado = ep.id_estado
+                WHERE ep.nombre LIKE '%acept%'";
+
+        $stmt = $this->db->prepare($sql);
+
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC)["total"];
+
+    }
 }
 ?>

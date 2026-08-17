@@ -248,6 +248,36 @@ class Oferta extends Model
 
     }
 
-}
 
+// CONTAR TOTAL DE OFERTAS (para reportes admin)
+    public function contarTotal()
+    {
+
+        $sql = "SELECT COUNT(*) AS total FROM ofertas";
+
+        $stmt = $this->db->prepare($sql);
+
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC)["total"];
+
+    }
+
+    // CONTAR OFERTAS PUBLICADAS ESTE MES (para reportes admin)
+    public function contarEsteMes()
+    {
+
+        $sql = "SELECT COUNT(*) AS total
+                FROM ofertas
+                WHERE MONTH(fecha_publicacion) = MONTH(CURDATE())
+                AND YEAR(fecha_publicacion) = YEAR(CURDATE())";
+
+        $stmt = $this->db->prepare($sql);
+
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC)["total"];
+
+    }
+}
 ?>

@@ -135,6 +135,37 @@ class Empresa extends Model{
 
     }
 
+
+
+    // CONTAR TOTAL DE EMPRESAS (para reportes admin)
+    public function contarTotal()
+    {
+
+        $sql = "SELECT COUNT(*) AS total FROM empresas";
+
+        $stmt = $this->db->prepare($sql);
+
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC)["total"];
+
+    }
+
+    // CONTAR EMPRESAS CON AL MENOS UNA OFERTA ACTIVA
+    public function contarActivas()
+    {
+
+        $sql = "SELECT COUNT(DISTINCT id_empresa) AS total
+                FROM ofertas
+                WHERE estado = 1";
+
+        $stmt = $this->db->prepare($sql);
+
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC)["total"];
+
+    }
 }
 
 ?>

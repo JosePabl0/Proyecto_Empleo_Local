@@ -11,7 +11,7 @@
         </div>
 
         <a
-            href="<?= BASE_URL ?>/admin.php?action=usuarios"
+            href="<?= BASE_URL ?>/admin/usuarios"
             class="btn btn-outline-secondary"
         >
             ← Volver a usuarios
